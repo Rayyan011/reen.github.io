@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reens Closet - Valentine’s Edition</title>
-  <!-- Using Roboto for body text and Pacifico for headings -->
+  <title>Dress to Impress - Mobile Sliders Redesign</title>
+  <!-- Using Roboto & Pacifico fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Pacifico&display=swap"
     rel="stylesheet"
@@ -14,87 +14,87 @@
 <body>
   <div class="container">
     <header>
-      <h1>Reens Closet Valentines Edition</h1>
+      <h1>Dress to Impress Valentines</h1>
       <p>Select your outfit options to create your perfect look!</p>
     </header>
 
-    <!-- Game Area -->
-    <div class="game-area">
-      <!-- Wardrobe Section -->
-      <div class="wardrobe">
-        <h2>Wardrobe</h2>
-        <div class="items">
-          <!-- Top Options -->
-          <img
-            src="assets/top1.png"
-            alt="Top 1"
-            draggable="true"
-            class="item"
-            data-type="top"
-          />
-          <img
-            src="assets/top2.png"
-            alt="Top 2"
-            draggable="true"
-            class="item"
-            data-type="top"
-          />
-          <!-- Skirt Options -->
-          <img
-            src="assets/skirt1.png"
-            alt="Skirt 1"
-            draggable="true"
-            class="item"
-            data-type="skirt"
-          />
-          <img
-            src="assets/skirt2.png"
-            alt="Skirt 2"
-            draggable="true"
-            class="item"
-            data-type="skirt"
-          />
-          <!-- Hat Options -->
-          <img
-            src="assets/hat1.png"
-            alt="Hat 1"
-            draggable="true"
-            class="item"
-            data-type="hat"
-          />
-          <img
-            src="assets/hat2.png"
-            alt="Hat 2"
-            draggable="true"
-            class="item"
-            data-type="hat"
-          />
-        </div>
-      </div>
-
-      <!-- Outfit Assembly Area -->
-      <div class="outfit-area">
-        <h2>Your Outfit</h2>
-
-        <div class="dropzone" id="hat-dropzone" data-type="hat">
+    <!-- ================= DESKTOP LAYOUT ================= -->
+    <div class="desktop-layout">
+      <div class="game-area">
+        <!-- Outfit Section (Left) -->
+        <div class="outfit-area">
+          <h2>Your Outfit</h2>
+          <div class="dropzone" id="hat-dropzone" data-type="hat">
             <p>Drop Hat Here</p>
           </div>
-        <div class="dropzone" id="top-dropzone" data-type="top">
-          <p>Drop Top Here</p>
+          <div class="dropzone" id="top-dropzone" data-type="top">
+            <p>Drop Top Here</p>
+          </div>
+          <div class="dropzone" id="skirt-dropzone" data-type="skirt">
+            <p>Drop Skirt Here</p>
+          </div>
         </div>
-        <div class="dropzone" id="skirt-dropzone" data-type="skirt">
-          <p>Drop Skirt Here</p>
+
+        <!-- Wardrobe Section (Right) -->
+        <div class="wardrobe">
+          <h2>Wardrobe</h2>
+          <div class="items">
+            <!-- Hat Options -->
+            <img src="assets/hat1.png" alt="Hat 1" draggable="true" class="item" data-type="hat" />
+            <img src="assets/hat2.png" alt="Hat 2" draggable="true" class="item" data-type="hat" />
+            <!-- Top Options -->
+            <img src="assets/top1.png" alt="Top 1" draggable="true" class="item" data-type="top" />
+            <img src="assets/top2.png" alt="Top 2" draggable="true" class="item" data-type="top" />
+            <!-- Skirt Options -->
+            <img src="assets/skirt1.png" alt="Skirt 1" draggable="true" class="item" data-type="skirt" />
+            <img src="assets/skirt2.png" alt="Skirt 2" draggable="true" class="item" data-type="skirt" />
+          </div>
         </div>
-        
       </div>
+      <footer>
+        <button id="resetButton">Reset Outfit</button>
+      </footer>
     </div>
 
-    <footer>
-      <button id="resetButton">Reset Outfit</button>
-    </footer>
+    <!-- ================= MOBILE LAYOUT ================= -->
+    <!-- A single "preview" box with stacked items (hat, top, skirt), each with left/right arrows. -->
+    <div class="mobile-layout">
+      <div class="mobile-outfit-box">
+        <h2>Your Outfit </h2>
+
+        <!-- Hat Row -->
+        <div class="item-row">
+          <button class="arrow left"  id="hatLeft">←</button>
+          <div class="item-slot">
+            <img id="mobileHat" class="mobile-hat" src="" alt="Hat" />
+          </div>
+          <button class="arrow right" id="hatRight">→</button>
+        </div>
+
+        <!-- Top Row -->
+        <div class="item-row">
+          <button class="arrow left"  id="topLeft">←</button>
+          <div class="item-slot">
+            <img id="mobileTop" class="mobile-top" src="" alt="Top" />
+          </div>
+          <button class="arrow right" id="topRight">→</button>
+        </div>
+
+        <!-- Skirt Row -->
+        <div class="item-row">
+          <button class="arrow left"  id="skirtLeft">←</button>
+          <div class="item-slot">
+            <img id="mobileSkirt" class="mobile-skirt" src="" alt="Skirt" />
+          </div>
+          <button class="arrow right" id="skirtRight">→</button>
+        </div>
+
+        <button id="mobileDoneBtn" class="done-btn">Done</button>
+      </div>
+    </div>
   </div>
 
-  <!-- Floating Hearts Wrapper (for animation) -->
+  <!-- Floating Hearts Wrapper -->
   <div id="heartWrapper" class="heart-wrapper hidden"></div>
 
   <!-- Completion Modal (Pop Out) -->
